@@ -1,0 +1,3 @@
+# Basic
+
+APP_NAME = 
