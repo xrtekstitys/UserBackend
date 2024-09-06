@@ -1,11 +1,13 @@
 import json
 from user import User
 
+
 def get_database_content():
     with open("database.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
     return data
+
 
 def get_user(username):
     data = get_database_content()
@@ -15,11 +17,13 @@ def get_user(username):
 
     return user_data
 
+
 def is_password_right(username, password):
     data = get_user(username)
     if data == password:
         return True
     return False
+
 
 def create_user(user: User):
     # TODO #1 Remember to check if user already exists

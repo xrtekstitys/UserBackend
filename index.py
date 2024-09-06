@@ -10,7 +10,13 @@ app = Flask(__name__)
 def user():
     if request.method == "GET":
         user_data = request.json()
-        return json.dumps({"is_password_right": is_password_right(username=user_data["username"], password=user_data["password"])})
+        return json.dumps(
+            {
+                "is_password_right": is_password_right(
+                    username=user_data["username"], password=user_data["password"]
+                )
+            }
+        )
     if request.method == "POST":
         user_data = request.json()
         username = user_data["username"]
@@ -22,6 +28,6 @@ def user():
         abort(500)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     app.run(debug=True)
